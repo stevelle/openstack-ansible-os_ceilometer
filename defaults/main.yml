@@ -20,6 +20,12 @@ verbose: True
 ## APT Cache options
 cache_timeout: 600
 
+ceilometer_git_repo: https://git.openstack.org/openstack/ceilometer
+ceilometer_git_install_branch: master
+ceilometer_developer_mode: false
+ceilometer_developer_constraints:
+  - "git+{{ ceilometer_git_repo }}@{{ ceilometer_git_install_branch }}#egg=ceilometer"
+
 # Name of the virtual env to deploy into
 ceilometer_venv_tag: untagged
 ceilometer_venv_bin: "/openstack/venvs/ceilometer-{{ ceilometer_venv_tag }}/bin"
